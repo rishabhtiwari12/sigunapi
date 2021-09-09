@@ -3,6 +3,10 @@ const bodyParser=require('body-parser');
 
 
 const app=express();
+const port=process.env.PORT||3000;
+app.listen(port,(req,res)=>{
+    console.log("server started on port 3000");
+})
 app.use(bodyParser.urlencoded({extended: true}));
  app.use(bodyParser.json());
 
@@ -33,4 +37,3 @@ app.use((req,res,next)=>{
     });
 });
 
-module.exports=app;
